@@ -1,0 +1,25 @@
+(program [offset=12]
+ (decllist
+   (decl->program: |feature|
+     number: 1, scope: 1))
+ (block [offset=0]
+   (decllist
+     (decl->type: |n|
+       (type->size=20, kind=record:
+         (fieldlist
+           (field |a|
+             (field offset: 0)
+             (type->size=4, kind=INTEGER))
+           (field |b|
+             (field offset: 4)
+             (type->size=4, kind=INTEGER))
+           (field |c|
+             (field offset: 8)
+             (type->size=4, kind=INTEGER))
+           (field |x|
+             (field offset: 12)
+             (type->size=4, kind=INTEGER))
+           (field |y|
+             (field offset: 16)
+             (type->size=4, kind=INTEGER))))
+       number: 1, scope: 2))))

@@ -1,0 +1,10 @@
+(program [offset=12]
+ (decllist
+   (decl->program: |feature|
+     number: 1, scope: 1))
+ (block [offset=-4]
+   (decllist
+     (decl->variable: |n|
+       (type->size=4, kind=INTEGER)
+       [lev=1,off=-4,ind=0,tmp=0]
+       number: 1, scope: 2))))

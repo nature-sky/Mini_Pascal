@@ -1,0 +1,33 @@
+(program [offset=12]
+ (decllist
+   (decl->program: |feature|
+     number: 1, scope: 1))
+ (block [offset=-8]
+   (decllist
+     (decl->variable: |sum|
+       (type->size=4, kind=INTEGER)
+       [lev=1,off=-4,ind=0,tmp=0]
+       number: 1, scope: 2))
+   (stmtlist
+     (stmt->assignstmt:
+       (expr->[lev=1,off=-4,ind=0,tmp=0][lhs] binding: |sum|, number: 1, scope: 2
+         expr_type->(type->size=4, kind=INTEGER))
+       (expr->[value=10][rhs/later] int: 10
+         expr_type->(type->size=4, kind=INTEGER)))
+     (stmt->repeatstmt:
+       (expr->[lev=1,off=-8,ind=0,tmp=0][rhs/regcnt=1/reg=$t0] binexp: op(=)
+         (expr->[lev=1,off=-4,ind=0,tmp=0][rhs/regcnt=1/reg=$t0] binding: |sum|, number: 1, scope: 2
+           expr_type->(type->size=4, kind=INTEGER))
+         (expr->[value=0][rhs/later] int: 0
+           expr_type->(type->size=4, kind=INTEGER))
+         expr_type->(type->size=4, kind=BOOLEAN))
+       (stmtlist
+         (stmt->assignstmt:
+           (expr->[lev=1,off=-4,ind=0,tmp=0][lhs/later] binding: |sum|, number: 1, scope: 2
+             expr_type->(type->size=4, kind=INTEGER))
+           (expr->[lev=1,off=-8,ind=0,tmp=0][rhs/regcnt=1/reg=$t0] binexp: op(-)
+             (expr->[lev=1,off=-4,ind=0,tmp=0][rhs/regcnt=1/reg=$t0] binding: |sum|, number: 1, scope: 2
+               expr_type->(type->size=4, kind=INTEGER))
+             (expr->[value=1][rhs/later] int: 1
+               expr_type->(type->size=4, kind=INTEGER))
+             expr_type->(type->size=4, kind=INTEGER))))))))

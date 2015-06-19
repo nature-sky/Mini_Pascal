@@ -1,0 +1,32 @@
+(program [offset=12]
+ (decllist
+   (decl->program: |feature|
+     number: 1, scope: 1))
+ (block [offset=0]
+   (decllist
+     (decl->variable: |sum|
+       (type->size=4, kind=INTEGER)
+       number: 1, scope: 2))
+   (stmtlist
+     (stmt->assignstmt:
+       (expr->[lhs] binding: |sum|, number: 1, scope: 2
+         expr_type->(type->size=4, kind=INTEGER))
+       (expr->[value=10][rhs] int: 10
+         expr_type->(type->size=4, kind=INTEGER)))
+     (stmt->repeatstmt:
+       (expr->[rhs] binexp: op(=)
+         (expr->[rhs] binding: |sum|, number: 1, scope: 2
+           expr_type->(type->size=4, kind=INTEGER))
+         (expr->[value=0][rhs] int: 0
+           expr_type->(type->size=4, kind=INTEGER))
+         expr_type->(type->size=4, kind=BOOLEAN))
+       (stmtlist
+         (stmt->assignstmt:
+           (expr->[lhs] binding: |sum|, number: 1, scope: 2
+             expr_type->(type->size=4, kind=INTEGER))
+           (expr->[rhs] binexp: op(-)
+             (expr->[rhs] binding: |sum|, number: 1, scope: 2
+               expr_type->(type->size=4, kind=INTEGER))
+             (expr->[value=1][rhs] int: 1
+               expr_type->(type->size=4, kind=INTEGER))
+             expr_type->(type->size=4, kind=INTEGER))))))))

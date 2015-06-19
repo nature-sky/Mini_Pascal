@@ -1,0 +1,5 @@
+(program [offset=12]
+ (decllist
+   (decl->program: |feature|
+     number: 1, scope: 1))
+ (block [offset=0]))

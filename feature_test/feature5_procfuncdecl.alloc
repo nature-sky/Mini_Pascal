@@ -1,0 +1,18 @@
+(program [offset=12]
+ (decllist
+   (decl->program: |feature|
+     number: 1, scope: 1))
+ (block [offset=0]
+   (decllist
+     (decl->procedure: |myPro| [offset=12]
+       
+       top label: L1
+       (block [offset=0])
+       number: 1, scope: 2)
+     (decl->function: |fun| [offset=16]
+       
+       (type->size=4, kind=INTEGER)
+       [lev=2,off=12,ind=0,tmp=0]
+       top label: L2
+       (block [offset=0])
+       number: 2, scope: 2))))

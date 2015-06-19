@@ -1,0 +1,15 @@
+(program [offset=12]
+ (decllist
+   (decl->program: |feature|
+     number: 1, scope: 1))
+ (block [offset=0]
+   (decllist
+     (decl->procedure: |myPro| [offset=12]
+       
+       (block [offset=0])
+       number: 1, scope: 2)
+     (decl->function: |fun| [offset=12]
+       
+       (type->size=4, kind=INTEGER)
+       (block [offset=0])
+       number: 2, scope: 2))))
